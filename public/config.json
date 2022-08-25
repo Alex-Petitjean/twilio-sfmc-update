@@ -1,0 +1,120 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+       "icon": "images/iconSmall.png",
+       "category": "message"
+    },
+    "type": "REST",
+    "lang": {
+       "en-US": {
+           "name": "Twilio SMS (Test)",
+           "description": "Send Twilio SMS with Journey Builder",
+           "TwilioMessage":"test"
+       }
+    },
+    "arguments": {
+        "execute": {
+            "inArguments": [
+                {
+                  "to": "{{Event.TO-BE-REPLACED.phone_number}}" 
+                }               
+            ],
+            "outArguments": [],
+            "url": "https://TO-BE-REPLACED/journeybuilder/execute",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+        }
+    },
+    "configurationArguments": {
+      "applicationExtensionKey": "TO-BE-REPLACED",
+       "save": {
+           "url": "https://TO-BE-REPLACED/save",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+       },
+       "publish": {
+           "url": "https://TO-BE-REPLACED/publish",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+       },
+       "validate": {
+           "url": "https://TO-BE-REPLACED/validate",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+       },
+       "stop": {
+           "url": "https://TO-BE-REPLACED/stop",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+       }
+    },
+    "wizardSteps": [
+       { "label": "Create SMS Message", "key": "step1" }
+    ],
+    "userInterfaces": {
+       "configModal": {
+           "height": 600,
+           "width": 800,
+           "fullscreen": false
+       }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [
+                    {
+                        "accountSid": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "authToken": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "from": {
+                            "dataType": "Phone",
+                            "isNullable": true,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "to": {
+                            "dataType": "Phone",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },
+                    {
+                        "body": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    }
+                ],
+                "outArguments": []
+            }
+        }
+    }
+}
